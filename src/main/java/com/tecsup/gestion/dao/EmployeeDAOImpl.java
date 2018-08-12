@@ -75,7 +75,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 	@Override
 	public void create(Employee emp) throws DAOException {
 
-		String query = "INSERT INTO EMPLOYEES (login, password, first_name, last_name, salary, department_id)  VALUES ( ?,?,?,?,?,? )";
+		String query = "INSERT INTO EMPLOYEES (EMPLOYEE_ID, login, password, first_name, last_name, salary, department_id)  VALUES ( EMPLOYEES_SEQ.NEXTVAL,?,?,?,?,?,? )";
 
 		Object[] params = new Object[] { emp.getUsername(), emp.getPassword(), emp.getLastname(), emp.getFirstname(), emp.getSalary(), emp.getDepartmentId() };
 
